@@ -9,7 +9,7 @@ set PATH=%~dp0python;%~dp0cmake\bin;%PATH%
 nssm install "%1" "%~dp0nginx.exe"
 set addpaths=%~dp0python;%~dp0cmake\bin;
 @echo %addpaths%
-nssm set "%1" AppEnvironmentExtra PATH=addpaths^%PATH^%
+nssm set "%1" AppEnvironmentExtra PATH=%addpaths%^%PATH^%
 python --version
 cmake --version
 goto :eof
